@@ -1,12 +1,14 @@
 class Recall < Formula
   desc 'Cache and replay CLI commands'
   homepage 'https://github.com/tomafro/recall'
-  url 'https://github.com/tomafro/recall/releases/download/v0.1.0/recall-0.1.0-2fc134c.tar.gz'
-  sha256 '4e1ea8f7cedbf971fc0d4461d50b03873bf6972156d2fd97211e7c12b31f3f79'
+  url 'https://github.com/tomafro/recall/archive/refs/tags/v0.1.0.tar.gz'
+  sha256 '3ffb9278e3cbd68dab033087379fcdf8663878dfff82be33324f2253b574a7d0'
   license 'MIT'
 
+  depends_on 'rust' => :build
+
   def install
-    bin.install 'recall'
+    system 'cargo', 'install', *std_cargo_args
   end
 
   test do
