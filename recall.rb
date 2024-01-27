@@ -5,10 +5,8 @@ class Recall < Formula
   sha256 '4e1ea8f7cedbf971fc0d4461d50b03873bf6972156d2fd97211e7c12b31f3f79'
   license 'MIT'
 
-  depends_on 'rust' => :build
-
   def install
-    system 'cargo', 'install', *std_cargo_args
+    bin.install 'recall'
   end
 
   test do
